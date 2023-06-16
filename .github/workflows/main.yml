@@ -7,19 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-      name: Check out
+    - name: Github Action for LaTeX
+      uses: xu-cheng/latex-action@v2
       with:
-        fetch-depth: 1
-    
-    - name: Init LaTeX Environment
-      run: sudo apt-get -qq update && sudo apt-get install -y latexmk texlive-base texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-bibtex-extra biber
-    
-    - name: Compile LaTeX
-      run: latexmk -bibtex -pdf -interaction=nonstopmode thesis-example.tex
-
-    - uses: actions/upload-artifact@master
-      name: Upload file
-      with:
-        name: thesis-example.pdf
-        path: ./
+        root_file: |
+          thesis-example.tex
