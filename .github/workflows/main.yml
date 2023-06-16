@@ -13,7 +13,7 @@ jobs:
         fetch-depth: 1
     
     - name: Init LaTeX Environment
-      run: sudo apt-get -qq update && sudo apt-get install -y latexmk texlive-base texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-bibtex-extra biber texlive-generic-extra
+      run: sudo apt-get -qq update && sudo apt-get install -y latexmk texlive-base texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-bibtex-extra biber
     
     - name: Compile LaTeX
       run: latexmk -bibtex -pdf -interaction=nonstopmode thesis-example.tex
